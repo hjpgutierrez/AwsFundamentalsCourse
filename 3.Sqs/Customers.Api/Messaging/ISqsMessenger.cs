@@ -1,9 +1,8 @@
 ﻿using Amazon.SQS.Model;
 
-namespace Customers.Api.Messaging
+namespace Customers.Api.Messaging;
+
+public interface ISqsMessenger
 {
-    public interface ISqsMessenger
-    {
-        Task<SendMessageResponse> SendMessageAsync<T>(T message);
-    }
+    Task<SendMessageResponse> SendMessageAsync<T>(T message);
 }

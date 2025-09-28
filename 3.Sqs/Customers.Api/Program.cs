@@ -1,4 +1,3 @@
-using Amazon;
 using Amazon.SQS;
 using Customers.Api.Database;
 using Customers.Api.Messaging;
@@ -34,8 +33,8 @@ builder.Services.AddSingleton<IDbConnectionFactory>(_ =>
     new SqliteConnectionFactory(config.GetValue<string>("Database:ConnectionString")!));
 builder.Services.AddSingleton<DatabaseInitializer>();
 
-builder.Services.Configure<QueueSettings>(config.GetSection(QueueSettings.Key));
-builder.Services.AddSingleton<IAmazonSQS>(_ => new AmazonSQSClient(RegionEndpoint.USEast2));
+builder.Services.Configure<QueueSettings>(builder.Configuration.GetSection(QueueSettings.Key));
+builder.Services.AddSingleton<IAmazonSQS, AmazonSQSClient>();
 builder.Services.AddSingleton<ISqsMessenger, SqsMessenger>();
 
 builder.Services.AddSingleton<ICustomerRepository, CustomerRepository>();

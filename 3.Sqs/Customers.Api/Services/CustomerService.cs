@@ -14,9 +14,8 @@ public class CustomerService : ICustomerService
     private readonly IGitHubService _gitHubService;
     private readonly ISqsMessenger _sqsMessenger;
 
-    public CustomerService(ICustomerRepository customerRepository,
-        IGitHubService gitHubService,
-        ISqsMessenger sqsMessenger)
+    public CustomerService(ICustomerRepository customerRepository, 
+        IGitHubService gitHubService, ISqsMessenger sqsMessenger)
     {
         _customerRepository = customerRepository;
         _gitHubService = gitHubService;
@@ -86,8 +85,12 @@ public class CustomerService : ICustomerService
         var response = await _customerRepository.DeleteAsync(id);
         if (response)
         {
-            await _sqsMessenger.SendMessageAsync(new CustomerDeleted { Id = id });
+            await _sqsMessenger.SendMessageAsync(new CustomerDeleted
+            {
+                Id = id
+            });
         }
+
         return response;
     }
 

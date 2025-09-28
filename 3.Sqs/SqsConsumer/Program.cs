@@ -1,9 +1,8 @@
-﻿using Amazon;
-using Amazon.SQS;
+﻿using Amazon.SQS;
 using Amazon.SQS.Model;
 
 var cts = new CancellationTokenSource();
-var sqsClient = new AmazonSQSClient(RegionEndpoint.USEast2);
+var sqsClient = new AmazonSQSClient();
 
 var queueUrlResponse = await sqsClient.GetQueueUrlAsync("customers");
 

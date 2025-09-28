@@ -1,7 +1,7 @@
-﻿using Amazon.SQS;
+﻿using System.Text.Json;
+using Amazon.SQS;
 using Amazon.SQS.Model;
 using Microsoft.Extensions.Options;
-using System.Text.Json;
 
 namespace Customers.Api.Messaging;
 
@@ -19,9 +19,11 @@ public class SqsMessenger : ISqsMessenger
 
     public async Task<SendMessageResponse> SendMessageAsync<T>(T message)
     {
+        var queueUrl = await GetQueueUrlAsync();
+
         var sendMessageRequest = new SendMessageRequest
         {
-            QueueUrl = await GetQueueUrlAsync(),
+            QueueUrl = queueUrl,
             MessageBody = JsonSerializer.Serialize(message),
             MessageAttributes = new Dictionary<string, MessageAttributeValue>
             {
@@ -44,9 +46,9 @@ public class SqsMessenger : ISqsMessenger
         {
             return _queueUrl;
         }
-
-        var queurUrlResponse = await _sqs.GetQueueUrlAsync(_queueSettings.Value.Name);
-        _queueUrl = queurUrlResponse.QueueUrl;
+        
+        var queueUrlResponse = await _sqs.GetQueueUrlAsync(_queueSettings.Value.Name);
+        _queueUrl = queueUrlResponse.QueueUrl;
         return _queueUrl;
     }
 }

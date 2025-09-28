@@ -4,7 +4,7 @@ using Amazon.SQS;
 using Amazon.SQS.Model;
 using SqsPublisher;
 
-var sqsClient = new AmazonSQSClient(RegionEndpoint.USEast2);
+var sqsClient = new AmazonSQSClient();
 
 var customer = new CustomerCreated
 {
