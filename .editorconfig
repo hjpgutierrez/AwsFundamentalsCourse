@@ -71,21 +71,15 @@ csharp_style_expression_bodied_local_functions = true:error
 
 # CA1018: Marcar atributos con AttributeUsageAttribute
 dotnet_diagnostic.CA1018.severity = none
+dotnet_diagnostic.CA1015.severity = none
+dotnet_diagnostic.CA1310.severity = none
+dotnet_diagnostic.CA5394.severity = none
 
 # IDE0008: Usar un tipo expl�cito
 dotnet_diagnostic.IDE0008.severity = none
-csharp_style_allow_embedded_statements_on_same_line_experimental = true:silent
-csharp_style_allow_blank_lines_between_consecutive_braces_experimental = true:silent
-csharp_style_allow_blank_line_after_colon_in_constructor_initializer_experimental = true:silent
-csharp_style_allow_blank_line_after_token_in_conditional_expression_experimental = true:silent
-csharp_style_allow_blank_line_after_token_in_arrow_expression_clause_experimental = true:silent
-csharp_prefer_system_threading_lock = true:suggestion
-csharp_style_prefer_switch_expression = true:error
-csharp_style_prefer_pattern_matching = true:silent
-csharp_style_pattern_matching_over_is_with_cast_check = true:error
-csharp_style_pattern_matching_over_as_with_null_check = true:error
-csharp_style_prefer_not_pattern = true:suggestion
-csharp_style_prefer_extended_property_pattern = true:suggestion
+
+
+dotnet_diagnostic.IDE0040.severity = none
 
 [*.{cs,vb}]
 dotnet_style_prefer_simplified_boolean_expressions = true:suggestion
@@ -288,6 +282,14 @@ dotnet_diagnostic.CA1063.severity = none
 # CA1307: Specify StringComparison for clarity
 dotnet_diagnostic.CA1307.severity = none
 
+
+dotnet_diagnostic.CA1305.severity = none
+dotnet_diagnostic.CA1849.severity = none
+dotnet_diagnostic.CA2000.severity = none
+
+dotnet_diagnostic.CA2254.severity = none
+dotnet_diagnostic.CS1998.severity = none
+
 # CA1515: Consider making public types internal
 dotnet_diagnostic.CA1515.severity = none
 
@@ -363,11 +365,6 @@ dotnet_diagnostic.CS8603.severity = none
 # CS8618: Non-nullable field must contain a non-null value when exiting constructor. Consider declaring as nullable.
 dotnet_diagnostic.CS8618.severity = none
 
-
-dotnet_diagnostic.CA1849.severity = none
-
-dotnet_diagnostic.S6934.severity = none
-
 # IDE Code Analyzers rules
 
 # IDE0005
@@ -392,6 +389,8 @@ dotnet_diagnostic.IDE0290.severity = none
 
 # S112: General or reserved exceptions should never be thrown
 dotnet_diagnostic.S112.severity = none
+
+dotnet_diagnostic.S114.severity = none
 
 # S125: Sections of code should not be commented out
 dotnet_diagnostic.S125.severity = none
@@ -422,6 +421,7 @@ dotnet_diagnostic.S3881.severity = none
 
 # S4136: Method overloads should be grouped together
 dotnet_diagnostic.S4136.severity = none
+dotnet_diagnostic.S4487.severity = none
 
 # S4158: Empty collections should not be accessed or iterated
 dotnet_diagnostic.S4158.severity = none
@@ -431,6 +431,14 @@ dotnet_diagnostic.S6605.severity = none
 
 # S6781: JWT secret keys should not be disclosed
 dotnet_diagnostic.S6781.severity = none
-end_of_line = crlf
-dotnet_style_allow_multiple_blank_lines_experimental = true:silent
-dotnet_style_allow_statement_immediately_after_block_experimental = true:silent
+
+dotnet_diagnostic.S1481.severity = none
+dotnet_diagnostic.S2930.severity = none
+dotnet_diagnostic.S3993.severity = none
+dotnet_diagnostic.S4581.severity = none
+
+dotnet_diagnostic.S6562.severity = none
+dotnet_diagnostic.S6934.severity = none
+dotnet_diagnostic.S6964.severity = none
+dotnet_diagnostic.S6966.severity = none
+dotnet_diagnostic.S3993.severity = none

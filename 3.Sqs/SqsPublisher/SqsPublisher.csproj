@@ -10,5 +10,7 @@
     <ItemGroup>
       <PackageReference Include="AWSSDK.SQS" Version="3.7.100.56" />
     </ItemGroup>
-
+	<ItemGroup>
+		<PackageReference Update="SonarAnalyzer.CSharp" Version="10.15.0.120848" />
+	</ItemGroup>
 </Project>
